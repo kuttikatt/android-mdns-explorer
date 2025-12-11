@@ -5,9 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.androidmdnsexplorer.R
 import com.example.androidmdnsexplorer.databinding.ActivityHomeBinding
 import com.example.androidmdnsexplorer.presentation.detail.DetailActivity
 import kotlinx.coroutines.flow.collectLatest
@@ -21,12 +24,21 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         enableEdgeToEdge()
+
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val types =
+                WindowInsetsCompat.Type.statusBars() or WindowInsetsCompat.Type.navigationBars()
+            val i = insets.getInsets(types)
+            v.setPadding(i.left, i.top, i.right, i.bottom)
+            insets
+        }
 
         vm = HomeViewModel(this)
 
@@ -37,8 +49,10 @@ class HomeActivity : AppCompatActivity() {
                 putExtra("ip", d.ip)
             })
         }
-        binding.rvDevices.layoutManager = LinearLayoutManager(this,
-            LinearLayoutManager.VERTICAL, false)
+        binding.rvDevices.layoutManager = LinearLayoutManager(
+            this,
+            LinearLayoutManager.VERTICAL, false
+        )
         binding.rvDevices.adapter = adapter
 
 
