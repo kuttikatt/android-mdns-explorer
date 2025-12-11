@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "443205072468",
+    "project_id": "androidmdnsexplorer",
+    "storage_bucket": "androidmdnsexplorer.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443205072468:android:43cb73ff80c4ea2df35fc1",
+        "android_client_info": {
+          "package_name": "com.example.androidmdnsexplorer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443205072468-ru7fndvri19ja57m49jhv75qph2nirrr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.androidmdnsexplorer",
+            "certificate_hash": "227372a148a9b9d4ffcdccd963e3c18dd128d4a1"
+          }
+        },
+        {
+          "client_id": "443205072468-pns2gp0hak64fbj47d58d73hkjcgochb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmwkQEb5AJCHUWTkt1iQ2V_NPvuj9rLDQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443205072468-pns2gp0hak64fbj47d58d73hkjcgochb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
